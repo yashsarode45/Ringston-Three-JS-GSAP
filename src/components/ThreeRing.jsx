@@ -54,51 +54,51 @@ function RingModel() {
       delete mesh.userData.originalMaterial;
     }
   };
-  useEffect(() => {
-    // Ensure group.current exists before setting up GUI
-    if (!group.current) return;
+  // useEffect(() => {
+  //   // Ensure group.current exists before setting up GUI
+  //   if (!group.current) return;
 
-    const gui = new dat.GUI();
+  //   const gui = new dat.GUI();
 
-    // --- Position Controls ---
-    const positionFolder = gui.addFolder("Position");
-    // Add controls for x, y, z position. Adjust min/max/step as needed.
-    positionFolder
-      .add(group.current.position, "x", -5, 5, 0.01)
-      .name("Position X");
-    positionFolder
-      .add(group.current.position, "y", -5, 5, 0.01)
-      .name("Position Y");
-    positionFolder
-      .add(group.current.position, "z", -5, 5, 0.01)
-      .name("Position Z");
-    // positionFolder.open(); // Optional: Open the folder by default
+  //   // --- Position Controls ---
+  //   const positionFolder = gui.addFolder("Position");
+  //   // Add controls for x, y, z position. Adjust min/max/step as needed.
+  //   positionFolder
+  //     .add(group.current.position, "x", -5, 5, 0.01)
+  //     .name("Position X");
+  //   positionFolder
+  //     .add(group.current.position, "y", -5, 5, 0.01)
+  //     .name("Position Y");
+  //   positionFolder
+  //     .add(group.current.position, "z", -5, 5, 0.01)
+  //     .name("Position Z");
+  //   // positionFolder.open(); // Optional: Open the folder by default
 
-    // --- Rotation Controls (Example) ---
-    const rotationFolder = gui.addFolder("Rotation");
-    rotationFolder
-      .add(group.current.rotation, "x", -Math.PI, Math.PI, 0.01)
-      .name("Rotation X");
-    rotationFolder
-      .add(group.current.rotation, "y", -Math.PI, Math.PI, 0.01)
-      .name("Rotation Y");
-    rotationFolder
-      .add(group.current.rotation, "z", -Math.PI, Math.PI, 0.01)
-      .name("Rotation Z");
-    rotationFolder.open();
+  //   // --- Rotation Controls (Example) ---
+  //   const rotationFolder = gui.addFolder("Rotation");
+  //   rotationFolder
+  //     .add(group.current.rotation, "x", -Math.PI, Math.PI, 0.01)
+  //     .name("Rotation X");
+  //   rotationFolder
+  //     .add(group.current.rotation, "y", -Math.PI, Math.PI, 0.01)
+  //     .name("Rotation Y");
+  //   rotationFolder
+  //     .add(group.current.rotation, "z", -Math.PI, Math.PI, 0.01)
+  //     .name("Rotation Z");
+  //   rotationFolder.open();
 
-    // --- Scale Controls (Example) ---
-    const scaleFolder = gui.addFolder("Scale");
-    scaleFolder.add(group.current.scale, "x", 0.1, 2, 0.01).name("Scale X");
-    scaleFolder.add(group.current.scale, "y", 0.1, 2, 0.01).name("Scale Y");
-    scaleFolder.add(group.current.scale, "z", 0.1, 2, 0.01).name("Scale Z");
-    scaleFolder.open();
+  //   // --- Scale Controls (Example) ---
+  //   const scaleFolder = gui.addFolder("Scale");
+  //   scaleFolder.add(group.current.scale, "x", 0.1, 2, 0.01).name("Scale X");
+  //   scaleFolder.add(group.current.scale, "y", 0.1, 2, 0.01).name("Scale Y");
+  //   scaleFolder.add(group.current.scale, "z", 0.1, 2, 0.01).name("Scale Z");
+  //   scaleFolder.open();
 
-    // Cleanup function: This runs when the component unmounts
-    return () => {
-      gui.destroy();
-    };
-  }, []);
+  //   // Cleanup function: This runs when the component unmounts
+  //   return () => {
+  //     gui.destroy();
+  //   };
+  // }, []);
   // Create scroll-triggered GSAP animations once the group is available.
 
   useGSAP(() => {
