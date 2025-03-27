@@ -12,7 +12,7 @@ const Header = () => {
         <a
           className="hover:invert  transition-all duration-300"
           target="_blank"
-          href="https://github.com/yashsarode45"
+          href="https://github.com/yashsarode45/Ringston-Three-JS-GSAP"
         >
           <FaGithub className=" w-9 h-9" />
         </a>
